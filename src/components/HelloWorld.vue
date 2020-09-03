@@ -15,7 +15,7 @@
     <h1>{{ $t('GENERAL.GUEST') }}</h1>
     <div>
       <button data-lang="tw" @click="setLang">中文</button>
-      <button data-lang="en" @click="setLang">English</button>
+      <button data-lang="vn" @click="setLang">English</button>
     </div>
   </div>
 </template>

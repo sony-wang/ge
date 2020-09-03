@@ -1,0 +1,181 @@
+body{
+    background-color: #1d1717!important;
+    font-family: 'Microsoft JhengHei';
+}
+
+.s4s5{
+    background-repeat: no-repeat;
+}
+
+
+.s-title{
+    font-size: 36px;
+    background: -webkit-linear-gradient(#f4d775, #f8bd53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.s4 img{
+    max-width: 260px;
+}
+
+.s5 img{
+    max-width: 300px;
+}
+
+.s5 .carousel-control-prev-icon {
+    background-image: url(assets/img/tamp-arr.jpg);
+    background-size: cover;
+}
+.s5 .carousel-control-next-icon {
+    background-image: url(assets/img/tamp-arr.jpg);
+    background-size: cover;
+    transform:scale(-1)
+}
+.s5 .carousel-control-next-icon, .s5 .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+.s6{
+    background-image: url(assets/img/footer-bg.png);
+    background-size: cover;
+}
+
+.s6 img{
+    max-width: 170px;
+}
+
+.footer{
+    color: #a88654;
+}
+#position{
+    display: none;
+}
+#goTop {
+    position:fixed;
+    z-index:9999;
+    right:1%;
+    top:90%;
+    transform:translateY(-50%);
+    padding:20px;
+    /* color:#fff; */
+    /* background:rgba(00,00,00,0.3); */
+    border:none;
+    opacity:0;
+    transition: opacity 0.4s linear;
+    outline: none;
+    background-color: transparent;
+    background-image: url(assets/img/top.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    min-height: 80px;
+  }
+  #goTop:hover{
+    /* color: #ffffff; */
+    /* background: rgb(145, 0, 56); */
+  }
+  #goTop.is-visible {
+    opacity:1;
+  }
+
+
+
+/* contact */
+
+#contact{
+    background-image: url(assets/img/contact/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#contact .icon a{
+    background: #facd89;
+    border-radius: 100%;
+}
+#contact .icon a:hover{
+    background: #00b800;
+}
+
+#contact input, #contact textarea{
+    background:#393333;
+    border: none;
+}
+#contact input::placeholder, #contact textarea::placeholder{
+    color:#bab4b4;
+}
+#contact .contact-btn{
+   background-color: #facd89;
+   min-width: 200px;
+   font-weight: 600;
+}
+#contact .contact-btn:hover{
+   background-color: #c0aaac;
+}
+
+
+/* about */
+
+#about{
+    padding-top:120px;
+}
+#about{
+    background-image: url(assets/img/about/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+
+#about .card{
+    background-color: transparent;
+    border-top: 2px solid #f5c86f;
+    border-right: 2px solid #f5c86f;
+    border-bottom: 2px solid #ab5f07;
+    border-left: 2px solid #f5c86f;
+    min-height: 280px;
+}
+
+#about .card img.circle-icon{
+    max-width: 80px;
+}
+
+#about .card-title-wrap img{
+    max-width: 150px;
+}
+#about .card-title-wrap-s img{
+    max-width: 300px;
+}
+
+#about .card p{
+    letter-spacing: 4px;
+}
+
+#about .card-title-wrap, #about .card-title-wrap-s{
+    border-bottom: #f5c86f dotted 1px;
+}
+
+
+
+@media screen and (max-width:1200px){
+    
+}
+@media screen and (max-width:992px){
+ 
+}
+@media screen and (max-width:768px){
+ #contact,#about{
+     padding-top:120px;
+ }
+ .s-title{
+     max-width: 150px;
+ }
+}
+@media screen and (max-width:576px){
+
+}
