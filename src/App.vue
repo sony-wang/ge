@@ -5,20 +5,26 @@
     <Nav />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Main :msg="$t('GENERAL.WELCOME_WORD')" />
+    <Main :lang="lang"/>
   </div>
 </template>
 
 <script>
-import Nav from './components/Nav.vue'
-import Main from './components/Main.vue'
+
+import Nav from '@/components/Nav.vue'
+import Main from '@/components/Main.vue'
 
 export default {
   name: 'App',
   components: {
     Main,
     Nav
-  }
+  },
+  data(){
+        return {
+            lang:localStorage.language
+        }
+    },
 }
 </script>
 

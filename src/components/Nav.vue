@@ -24,7 +24,6 @@
                     {{ menuItem }}
                 </a>
             </li> -->
-
             <li class="nav-item mx-3 text-center">
               <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
             </li>
@@ -49,13 +48,13 @@
                 aria-expanded="false"
               >{{ $t('GENERAL.NAV_LANG') }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-golden" href="#" data-lang="tw" @click="setLang">繁體中文</a>
+                <a class="dropdown-item text-golden" href="#" data-lang="cn" @click="setLang">繁體中文</a>
                 <a
                   class="dropdown-item text-golden"
                   href="#"
                   data-lang="vn"
                   @click="setLang"
-                >Việt Ngữ</a>
+                >Tiếng Việt</a>
               </div>
             </li>
           </ul>
@@ -67,18 +66,19 @@
 
 <script>
 export default {
-  name: "Nav",
-
-  methods: {
+    name: "Nav",
+    
+    methods: {
     setActiveLanguage(lang) {
-      localStorage.setItem("language", lang);
+        localStorage.setItem("language", lang);
     },
     setLang(evt) {
-      const lang = evt.target.dataset.lang;
-      this.setActiveLanguage(lang);
-      return history.go(0);
+        console.log(evt)
+        const lang = evt.target.dataset.lang;
+        this.setActiveLanguage(lang);
+        return history.go(0);
     },
-  },
+    },
 };
 
 
