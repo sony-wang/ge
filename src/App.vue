@@ -5,7 +5,8 @@
     <Nav />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Main :lang="lang"/>
+    <Main v-if="page_main" :lang="lang"/>
+    <About v-if="page_about" :lang="lang"/>
   </div>
 </template>
 
@@ -13,16 +14,20 @@
 
 import Nav from '@/components/Nav.vue'
 import Main from '@/components/Main.vue'
+import About from '@/components/About.vue'
 
 export default {
   name: 'App',
   components: {
+    Nav,
     Main,
-    Nav
+    About,
   },
   data(){
         return {
-            lang:localStorage.language
+            lang:localStorage.language,
+            page_main:false,
+            page_about:true
         }
     },
 }

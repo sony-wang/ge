@@ -25,7 +25,8 @@
                 </a>
             </li> -->
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
+              <!-- <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a> -->
+              <a class="nav-link text-golden" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
               <a class="nav-link text-golden" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
@@ -67,17 +68,21 @@
 <script>
 export default {
     name: "Nav",
-    
+        
     methods: {
-    setActiveLanguage(lang) {
-        localStorage.setItem("language", lang);
-    },
-    setLang(evt) {
-        console.log(evt)
-        const lang = evt.target.dataset.lang;
-        this.setActiveLanguage(lang);
-        return history.go(0);
-    },
+      setActiveLanguage(lang) {
+          localStorage.setItem("language", lang);
+      },
+      setLang(evt) {
+          console.log(evt)
+          const lang = evt.target.dataset.lang;
+          this.setActiveLanguage(lang);
+          return history.go(0);
+      },
+      About(){
+        let page_about = 'true'
+        return page_about;
+      }
     },
 };
 
