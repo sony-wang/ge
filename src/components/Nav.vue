@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg w-100 fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="./">
+        <a class="navbar-brand" href="javascript:;"  @click="Main">
           <img class="logo" src="../assets/img/logo.png" alt />
         </a>
         <button
@@ -26,16 +26,18 @@
             </li> -->
             <li class="nav-item mx-3 text-center">
               <!-- <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a> -->
-              <a class="nav-link text-golden" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
+              <a class="nav-link text-golden" href="javascript:;" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename == 'page_main'" class="nav-link text-golden" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename != 'page_main'" class="nav-link text-golden" href="javascript:;"  @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden" href="#anchor-coopration">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename == 'page_main'" class="nav-link text-golden" href="#anchor-coopration">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename != 'page_main'" class="nav-link text-golden" href="javascript:;" @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden" href="./contact.html">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
+              <!-- <a class="nav-link text-golden" href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a> -->
             </li>
             
             <li class="nav-item mx-3 dropdown text-center">
@@ -68,6 +70,11 @@
 <script>
 export default {
     name: "Nav",
+    data(){
+      return{
+        pagename:'page_main'
+      }
+    },
         
     methods: {
       setActiveLanguage(lang) {
@@ -79,9 +86,15 @@ export default {
           this.setActiveLanguage(lang);
           return history.go(0);
       },
+      Main(){
+        this.pagename='page_main'
+        console.log(this.pagename)
+        this.$emit('pagename_val',this.pagename);
+      },
       About(){
-        let page_about = 'true'
-        return page_about;
+        this.pagename='page_about'
+        console.log(this.pagename)
+        this.$emit('pagename_val',this.pagename);
       }
     },
 };

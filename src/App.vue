@@ -2,11 +2,12 @@
   <div id="app">
     <span id="position"></span>
     <button id="goTop"></button>
-    <Nav />
+    <Nav v-on:pagename_val="pagename_val" />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Main v-if="page_main" :lang="lang"/>
-    <About v-if="page_about" :lang="lang"/>
+    <Main v-if="pagename  === 'page_main'" :lang="lang"/>
+    <About v-if="pagename  === 'page_about'" :lang="lang"/>
+    <h1 style="color:#fff"> {{ pagename }} </h1>
   </div>
 </template>
 
@@ -26,10 +27,14 @@ export default {
   data(){
         return {
             lang:localStorage.language,
-            page_main:false,
-            page_about:true
+            pagename : 'page_main'
         }
     },
+    methods:{
+      pagename_val(getPage){
+        this.pagename = getPage
+      }
+    }
 }
 </script>
 
