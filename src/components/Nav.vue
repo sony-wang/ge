@@ -37,7 +37,7 @@
               <a v-if="pagename != 'page_main'" class="nav-link text-golden" href="javascript:;" @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <!-- <a class="nav-link text-golden" href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a> -->
+              <a class="nav-link text-golden" href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
             </li>
             
             <li class="nav-item mx-3 dropdown text-center">
@@ -93,6 +93,11 @@ export default {
       },
       About(){
         this.pagename='page_about'
+        console.log(this.pagename)
+        this.$emit('pagename_val',this.pagename);
+      },
+      Contact(){
+        this.pagename='page_contact'
         console.log(this.pagename)
         this.$emit('pagename_val',this.pagename);
       }

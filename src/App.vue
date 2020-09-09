@@ -7,7 +7,7 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <Main v-if="pagename  === 'page_main'" :lang="lang"/>
     <About v-if="pagename  === 'page_about'" :lang="lang"/>
-    <h1 style="color:#fff"> {{ pagename }} </h1>
+    <Contact v-if="pagename  === 'page_contact'" :lang="lang"/>
   </div>
 </template>
 
@@ -16,6 +16,7 @@
 import Nav from '@/components/Nav.vue'
 import Main from '@/components/Main.vue'
 import About from '@/components/About.vue'
+import Contact from '@/components/Contact.vue'
 
 export default {
   name: 'App',
@@ -23,6 +24,7 @@ export default {
     Nav,
     Main,
     About,
+    Contact,
   },
   data(){
         return {

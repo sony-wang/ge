@@ -3,6 +3,24 @@ body{
     font-family: 'Microsoft JhengHei';
 }
 
+.text-golden{
+    color: #c89f63!important;
+}
+nav .text-golden:hover{
+    color: #eeba6d!important;
+}
+.dropdown-menu{
+    background: #1d1717;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #16181b;
+    background: initial;
+    color: #eeba6d!important;
+}
+img.logo{
+    max-height: 60px;
+}
+
 .s4s5{
     background-repeat: no-repeat;
 }
