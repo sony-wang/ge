@@ -77,7 +77,7 @@ export default {
           localStorage.setItem("language", lang);
       },
       setLang(evt) {
-          console.log(evt)
+          // console.log(evt)
           const lang = evt.target.dataset.lang;
           this.setActiveLanguage(lang);
           return history.go(0);
