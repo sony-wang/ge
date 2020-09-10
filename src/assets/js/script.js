@@ -29,11 +29,11 @@ basicScrollTop(); */
 
 
 //同一頁超連結移動smooth
-document.querySelectorAll('a[href^="#anchor"]').forEach(anchor => {
+/* document.querySelectorAll('a[href^="#anchor"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
-});
+}); */

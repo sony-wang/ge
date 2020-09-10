@@ -26,23 +26,24 @@
             </li> -->
             <li class="nav-item mx-3 text-center">
               <!-- <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a> -->
-              <a class="nav-link text-golden" href="javascript:;" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
+              <a class="nav-link text-golden btn" href="javascript:;" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a v-if="pagename == 'page_main'" class="nav-link text-golden" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
-              <a v-if="pagename != 'page_main'" class="nav-link text-golden" href="javascript:;"  @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <!-- <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a> -->
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" v-scroll-to="'#anchor-product'">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn" @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a v-if="pagename == 'page_main'" class="nav-link text-golden" href="#anchor-coopration">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
-              <a v-if="pagename != 'page_main'" class="nav-link text-golden" href="javascript:;" @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn " v-scroll-to="'#anchor-coopration'">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn " @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden" href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
+              <a class="nav-link text-golden btn " href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
             </li>
             
             <li class="nav-item mx-3 dropdown text-center">
               <a
-                class="nav-link text-golden dropdown-toggle"
+                class="nav-link text-golden dropdown-toggle btn "
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -68,6 +69,7 @@
 </template>
 
 <script>
+
 export default {
     name: "Nav",
     data(){
@@ -102,6 +104,54 @@ export default {
         this.$emit('pagename_val',this.pagename);
       }
     },
+
+    mounted() {
+    var basicScrollTop = function () {
+      // The button
+      var btnTop = document.querySelector("#goTop");
+      // Reveal the button
+      var btnReveal = function () {
+        var position = document.querySelector("#position");
+        position.innerHTML = window.scrollY + "px";
+        if (window.scrollY >= 300) {
+          btnTop.classList.add("is-visible");
+        } else {
+          btnTop.classList.remove("is-visible");
+        }
+      };
+      // Smooth scroll top
+      var TopscrollTo = function () {
+        if (window.scrollY != 0) {
+          setTimeout(function () {
+            window.scrollTo(0, window.scrollY - 30);
+            TopscrollTo();
+          }, 5);
+        }
+      };
+      // Listeners
+      window.addEventListener("scroll", btnReveal);
+      btnTop.addEventListener("click", TopscrollTo);
+    };
+    basicScrollTop();
+
+    //同一頁超連結移動smooth
+    
+      // document.querySelectorAll('a[href^="#anchor"]').forEach((anchor) => {
+      //   console.log('取得pagename')
+      //   console.log(this.pagename)
+      //   if (this.pagename == "page_main") {
+      //     anchor.addEventListener("click", function (e) {
+      //       console.log(this.pagename)
+      //       e.preventDefault();
+      //       document.querySelector(this.getAttribute("href")).scrollIntoView({
+      //         behavior: "smooth",
+      //       });
+      //     });
+      //   }
+        
+      // });
+    
+  },
 };
 
 
