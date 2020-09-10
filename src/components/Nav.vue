@@ -26,25 +26,24 @@
             </li> -->
             <li class="nav-item mx-3 text-center">
               <!-- <a class="nav-link text-golden" href="./about.html">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a> -->
-              <a class="nav-link text-golden btn" href="javascript:;" @click="About">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
+              <a class="nav-link text-golden btn" href="javascript:;" @click="About" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[0] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
               <!-- <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a> -->
-              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" v-scroll-to="'#anchor-product'">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
-              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn" @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" v-scroll-to="'#anchor-product'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn" @click="Main" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn " v-scroll-to="'#anchor-coopration'">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
-              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn " @click="Main">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn " v-scroll-to="'#anchor-coopration'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn " @click="Main" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a class="nav-link text-golden btn " href="javascript:;" @click="Contact">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
+              <a class="nav-link text-golden btn"  @click="Contact" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
             </li>
             
             <li class="nav-item mx-3 dropdown text-center">
               <a
-                class="nav-link text-golden dropdown-toggle btn "
-                href="#"
+                class="nav-link text-golden dropdown-toggle btn"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -52,13 +51,8 @@
                 aria-expanded="false"
               >{{ $t('GENERAL.NAV_LANG') }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-golden" href="#" data-lang="cn" @click="setLang">繁體中文</a>
-                <a
-                  class="dropdown-item text-golden"
-                  href="#"
-                  data-lang="vn"
-                  @click="setLang"
-                >Tiếng Việt</a>
+                <a class="dropdown-item text-golden btn" data-lang="cn" @click="setLang">繁體中文</a>
+                <a class="dropdown-item text-golden btn" data-lang="vn" @click="setLang">Tiếng Việt</a>
               </div>
             </li>
           </ul>

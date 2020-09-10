@@ -272,10 +272,11 @@ export default {
   name: "Main",
 
   props: {
-    lang: String,
+    // lang: 'String',
   },
   data() {
     return {
+      lang:'cn',
       GE_Video: require("@/assets/video/GE_Video.mp4"),
       cn: {
         s2: require("@/assets/img/cn/s2.png"),
