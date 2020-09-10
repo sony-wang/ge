@@ -3,8 +3,9 @@
     <main class="d-md-flex align-items-center mt-md-0" style="min-height:85vh">
             <div class="container d-md-flex align-self-center d-block">
                 <div class="w-100 my-5">
-                    <img class="s-title" :src="cn.img_title" alt="">
-                    <p class="text-white my-5" style="max-width:400px;line-height: 200%">如有任何在線娛樂產品相關問題需求 或是其他寶貝建議，請隨時告訴我們</p>
+                    <img :src="cn.img_title" alt="" v-if="lang=='cn'" />
+                    <img class="w-75" :src="vn.img_title" alt="" v-if="lang=='vn'" />
+                    <p class="text-white my-5" style="max-width:400px;line-height: 200%">{{ $t('CONTACT.TITLE') }}</p>
                     <!-- <div class="icon d-flex">
                         <a class="mx-3 p-2" href="javascript:;"><img src="./img/contact/phone.png" alt="" srcset=""></a>
                         <a class="mx-3 p-2" href="javascript:;"><img src="./img/contact/line.png" alt="" srcset=""></a>
@@ -12,18 +13,18 @@
                     </div> -->
                 </div>
                 <div class="w-100 my-5">
-                    <h5 class="text-golden">給我們留言</h5>
+                    <h5 class="text-golden">{{ $t('CONTACT.LEAVEUSAMSG') }}</h5>
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="姓名">
+                        <input class="form-control" type="text" :placeholder="$t('CONTACT.LEAVEUSAMSG')" >
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="E-mail">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="留下訊息"></textarea>
+                        <textarea class="form-control" name="" id="" cols="30" rows="10" :placeholder="$t('CONTACT.MESSAGE')"></textarea>
                     </div>
                     <div class="d-flex my-1 justify-content-center m-auto">
-                        <button class="btn contact-btn px-5 text-center " type="submit">確定</button>
+                        <button class="btn contact-btn px-5 text-center " type="submit">{{ $t('CONTACT.CONFIRM') }}</button>
                     </div>
                 </div>
             </div>
@@ -51,9 +52,10 @@ export default {
     //     img_06: require("@/assets/img/about/06.png"),
     //   },
       cn: {
-        // s2: require("@/assets/img/cn/s2.png"),
-        img_title: require("@/assets/img/contact/cn/title.png"),
-        
+        img_title: require("@/assets/img/contact/cn/title.png"),       
+      },
+      vn: {
+        img_title: require("@/assets/img/contact/vn/title.png"),       
       },
     }
   },

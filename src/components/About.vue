@@ -5,7 +5,8 @@
                 <div class="w-100 my-5 d-flex justify-content-center">
                     <div class="w-100 d-md-block d-none"></div>
                     <div class="w-100">
-                        <img class="s-title my-4 mx-auto d-block" :src="cn.img_title" alt="">
+                        <img class="s-title my-4 mx-auto d-block" :src="cn.img_title" alt="" v-if="lang=='cn'">
+                        <img class="w-100" :src="vn.img_title" alt="" v-if="lang=='vn'" />
                         <p class="text-white text-center" style="line-height: 200%">
                             {{ $t('ABOUT.TITLE') }}
                         </p>
@@ -27,7 +28,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_01" alt="">
                                         </div>
                                         <div class="card-title-wrap w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_01" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_01" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_01" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -44,7 +46,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_02" alt="">
                                         </div>
                                         <div class="card-title-wrap w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_02" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_02" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_02" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -62,7 +65,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_03" alt="">
                                         </div>
                                         <div class="card-title-wrap w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_03" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_03" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_03" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -80,7 +84,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_04" alt="">
                                         </div>
                                         <div class="card-title-wrap w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_04" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_04" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_04" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -97,7 +102,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_05" alt="">
                                         </div>
                                         <div class="card-title-wrap-s w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_05" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_05" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_05" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -114,7 +120,8 @@
                                             <img class="position-absolute circle-icon" :src="imgs.img_06" alt="">
                                         </div>
                                         <div class="card-title-wrap w-100 ml-5 py-3">
-                                            <img class="w-100" :src="cn.img_title_06" alt="">
+                                            <img class="w-100 cn" :src="cn.img_title_06" alt="" v-if="lang=='cn'">
+                                            <img class="w-100" :src="vn.img_title_06" alt="" v-if="lang=='vn'" />
                                         </div>
                                     </div>
                                     <div class="p-5">
@@ -153,14 +160,23 @@ export default {
       },
       cn: {
         // s2: require("@/assets/img/cn/s2.png"),
-        img_title: require("@/assets/img/about/title.png"),
-        img_title_01: require("@/assets/img/about/title-01.png"),
-        img_title_02: require("@/assets/img/about/title-02.png"),
-        img_title_03: require("@/assets/img/about/title-03.png"),
-        img_title_04: require("@/assets/img/about/title-04.png"),
-        img_title_05: require("@/assets/img/about/title-05.png"),
-        img_title_06: require("@/assets/img/about/title-06.png"),
-        
+        img_title: require("@/assets/img/about/cn/title.png"),
+        img_title_01: require("@/assets/img/about/cn/title-01.png"),
+        img_title_02: require("@/assets/img/about/cn/title-02.png"),
+        img_title_03: require("@/assets/img/about/cn/title-03.png"),
+        img_title_04: require("@/assets/img/about/cn/title-04.png"),
+        img_title_05: require("@/assets/img/about/cn/title-05.png"),
+        img_title_06: require("@/assets/img/about/cn/title-06.png"),
+      },
+      vn: {
+        // s2: require("@/assets/img/cn/s2.png"),
+        img_title: require("@/assets/img/about/vn/title.png"),
+        img_title_01: require("@/assets/img/about/vn/title-01.png"),
+        img_title_02: require("@/assets/img/about/vn/title-02.png"),
+        img_title_03: require("@/assets/img/about/vn/title-03.png"),
+        img_title_04: require("@/assets/img/about/vn/title-04.png"),
+        img_title_05: require("@/assets/img/about/vn/title-05.png"),
+        img_title_06: require("@/assets/img/about/vn/title-06.png"),
       },
     }
   },

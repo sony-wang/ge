@@ -26,5 +26,12 @@ export const locale = {
       SERVICE:'Tinh thần luôn hướng đến khách hàng, dịch vụ trực tuyến dành riêng 24 giờ, đội ngũ CSKH thân thiện, chuyên nghiệp, giải quyết mọi thắc mắc của người chơi.',
       DEPOSITWITHDRAW:'Đảm bảo mỗi thành viên được hưởng dịch vụ gửi và rút tiền nhanh nhất, cung cấp nền tảng thanh toán trực tuyến an toàn và thiết lập bảo mật tín dụng với các thành viên.',
       STRENGTH:'Với nghiên cứu và phát triển độc lập của các nhà phát triển trò chơi, nhấn mạnh sự tinh tế và lối chơi sáng tạo, cung cấp cho người chơi các sản phẩm, giải trí và dịch vụ chất lượng cao.'
+    },
+    CONTACT:{
+      TITLE:'Nếu bạn có bất kỳ thắc mắc về sản phẩm giải trí trực tuyến hoặc đóng góp ý kiến, vui lòng liên hệ với chúng tôi',
+      LEAVEUSAMSG:'Gửi tin nhắn cho tôi',
+      NAME:'Họ tên',
+      MESSAGE:'Để lại tin nhắn',
+      CONFIRM:'Xác nhận'
     }
   }
