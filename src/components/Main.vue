@@ -270,6 +270,7 @@
 <script>
 export default {
   name: "Main",
+
   props: {
     lang: String,
   },
