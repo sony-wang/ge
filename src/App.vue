@@ -40,9 +40,10 @@ export default {
     if(!this.lang){
       this.lang = 'cn'
     }
-    //解決重新整理影片區域滾輪亂跳問題
     window.scroll({
-      top: 1
+      top: 1,
+      left: 0,
+      behavior: 'smooth'
     });
   },
 };
