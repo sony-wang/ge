@@ -30,12 +30,12 @@
             </li>
             <li class="nav-item mx-3 text-center">
               <!-- <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" href="#anchor-product">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a> -->
-              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn" v-scroll-to="'#anchor-product'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
-              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn" @click="Main" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn btn_product" v-scroll-to="'#anchor-product'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn" @click="Main('btn_product')" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[1] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
-              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn " v-scroll-to="'#anchor-coopration'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
-              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn " @click="Main" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename === 'page_main'" class="nav-link text-golden btn btn_coopration" v-scroll-to="'#anchor-coopration'" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
+              <a v-if="pagename !== 'page_main'" class="nav-link text-golden btn " @click="Main('btn_coopration')" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[2] }}</a>
             </li>
             <li class="nav-item mx-3 text-center">
               <a class="nav-link text-golden btn"  @click="Contact" data-toggle="collapse" data-target=".navbar-collapse.show">{{ $t('GENERAL.NAV_OPTIONS')[3] }}</a>
@@ -82,10 +82,21 @@ export default {
           this.setActiveLanguage(lang);
           return history.go(0);
       },
-      Main(){
+      Main(param){
         this.pagename='page_main'
         console.log(this.pagename)
         this.$emit('pagename_val',this.pagename);
+        if(param == 'btn_product'){
+          setTimeout(() => {
+            this.$el.querySelector('.btn_product') .click();
+          }, 500);
+        }
+        if(param == 'btn_coopration'){
+          setTimeout(() => {
+            this.$el.querySelector('.btn_coopration') .click();
+          }, 500);
+        }
+        
       },
       About(){
         this.pagename='page_about'
